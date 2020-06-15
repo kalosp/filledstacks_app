@@ -13,11 +13,17 @@ import 'package:filledstacks_app/ui/views/home/home_view.dart';
 abstract class Routes {
   static const startupViewRoute = '/';
   static const homeViewRoute = '/home-view-route';
+  static const all = {
+    startupViewRoute,
+    homeViewRoute,
+  };
 }
 
 class Router extends RouterBase {
-  //This will probably be removed in future versions
-  //you should call ExtendedNavigator.ofRouter<Router>() directly
+  @override
+  Set<String> get allRoutes => Routes.all;
+
+  @Deprecated('call ExtendedNavigator.ofRouter<Router>() directly')
   static ExtendedNavigatorState get navigator =>
       ExtendedNavigator.ofRouter<Router>();
 

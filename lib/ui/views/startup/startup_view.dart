@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:stacked/stacked.dart';
-import 'package:auto_route/auto_route.dart';
 
-import 'startup_viewmodel.dart';
+import 'package:stacked/stacked.dart';
+import 'package:filledstacks_app/ui/views/startup/startup_viewmodel.dart';
+
 
 class StartupView extends StatelessWidget {
   @override
@@ -14,7 +13,7 @@ class StartupView extends StatelessWidget {
           child: Text('Startup View'),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () => model.navigateToHome(),
         ),
       ),
       viewModelBuilder: () => StartupViewModel(),
